@@ -1,4 +1,4 @@
-﻿local pont = 0.000
+local pont = 0.000
 local pofft = 0.000
 local ont = 0.000
 local offt = 0.000
@@ -283,7 +283,7 @@ function Abar_Update()
   if AttackBarDB.timer == true then
     left =(this.et - GetTime()) -(math_mod((this.et - GetTime()), .01))
     -- tText:SetText(this.txt.. "{"..left.."}")
-    tText:SetText("{" .. left .. "}")
+    -- tText:SetText("{" .. left .. "}")
     tText:Show()
   else
     tText:Hide()
@@ -297,11 +297,13 @@ function Abar_Update()
 end
 function Abar_Mhrs(bartime, text, r, g, b)
   Abar_Mhr:Hide()
-  Abar_Mhr.txt = text
+  -- Abar_Mhr.txt = text
+  Abar_Mhr.txt = " "
   Abar_Mhr.st = GetTime()
   Abar_Mhr.et = GetTime() + bartime
-  Abar_Mhr:SetStatusBarColor(r, g, b)
-  Abar_MhrText:SetText(text)
+  -- Abar_Mhr:SetStatusBarColor(r, g, b)
+  Abar_Mhr:SetStatusBarColor(0.7, 0.7, 0.7)
+  -- Abar_MhrText:SetText(text)
   Abar_Mhr:SetMinMaxValues(Abar_Mhr.st, Abar_Mhr.et)
   Abar_Mhr:SetValue(Abar_Mhr.st)
   Abar_Mhr:Show()
@@ -312,7 +314,7 @@ function Abar_Ohs(bartime, text, r, g, b)
   Abar_Oh.st = GetTime()
   Abar_Oh.et = GetTime() + bartime
   Abar_Oh:SetStatusBarColor(r, g, b)
-  Abar_OhText:SetText(text)
+  -- Abar_OhText:SetText(text)
   Abar_Oh:SetMinMaxValues(Abar_Oh.st, Abar_Oh.et)
   Abar_Oh:SetValue(Abar_Oh.st)
   Abar_Oh:Show()
@@ -359,11 +361,11 @@ end
 -- end
 function ebar_mhs(bartime, text, r, g, b)
   ebar_mh:Hide()
-  ebar_mh.txt = text
+  --ebar_mh.txt = text
   ebar_mh.st = GetTime()
   ebar_mh.et = GetTime() + bartime
   ebar_mh:SetStatusBarColor(r, g, b)
-  ebar_mhText:SetText(text)
+  --ebar_mhText:SetText(text)
   ebar_mh:SetMinMaxValues(ebar_mh.st, ebar_mh.et)
   ebar_mh:SetValue(ebar_mh.st)
   ebar_mh:Show()
@@ -374,7 +376,7 @@ function ebar_ohs(bartime, text, r, g, b)
   ebar_oh.st = GetTime()
   ebar_oh.et = GetTime() + bartime
   ebar_oh:SetStatusBarColor(r, g, b)
-  ebar_ohText:SetText(text)
+  -- ebar_ohText:SetText(text)
   ebar_oh:SetMinMaxValues(ebar_oh.st, ebar_oh.et)
   ebar_oh:SetValue(ebar_oh.st)
   ebar_oh:Show()
